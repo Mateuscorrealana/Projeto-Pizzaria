@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor1: #fbad40;
+    --cor2: #ffe6d6;
+    --cor3: #0D3739;
+    --cor4: #fce6d8;
+    --cor5: #FF5858;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+}
+
+
+.logo {
+    position: relative;
+    display: flex;
+    width: 120px;
+    height: auto;
+    margin-left: 15%;
+    margin-top: 25px;
+    cursor: pointer;
+    top: -10px;
+}
+
+.icones-topo {
+    display: flex;
+    gap: 10px;
+    margin-right: 240px;
+}
+
+.login,
+.carrinho {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 40px;
+    gap: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    top: -2px;
+}
+
+
+/* Linha que aparece no hover */
+.login::after,
+.carrinho::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor5);
+    transition: width 0.3s;
+}
+
+.login:hover::after {
+    width: 100%;
+}
+
+.carrinho:hover::after {
+    width: 100%;
+}
+
+.login img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.cabecalho {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: -25px;
+    width: 45%;
+    left: 28%;
+    border-radius: 40px;
+}
+
+.cabecalho p {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+    margin-left: 20px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.cabecalho p::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    /* espaçamento entre o texto */
+    left: 0;
+    width: 0;
+    height: 3px;
+    /* espessura da linha */
+    background-color: var(--cor1);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.cabecalho p:hover {
+    color: var(--cor1);
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+
+.cabecalho p:hover::after {
+    width: 100%;
+}
+
+
+/* contador badge no ícone de carrinho (adicionado via JS) */
+.carrinho,
+.login {
+    position: relative;
+    cursor: pointer;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #FF5858;
+    color: white;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+

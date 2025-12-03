@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <title>Pizzaria</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+        <div class="icones-topo">
+            <div class="login">
+                <!-- Ícone de login padrão -->
+                <img id="login-icon" src="favi icons/user 1.svg" alt="ícone de usuário"
+                    style="width:45px;cursor:pointer;">
+                <!-- Foto do usuário -->
+                <img id="user-photo" style="width:45px;display:none;border-radius:50%;cursor:pointer;">
+            </div>
+            <div class="carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+
+        <nav class="cabecalho">
+            <p>Sobre</p>
+            <p>Cardápio</p>
+            <p>Promoções</p>
+            <p>Fidelidade</p>
+            <p>Contato</p>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <div class="texto">
+            <h1>Proporcionando <br><span class="mom">momentos</span> que <br>valem a pena.</h1>
+            <p>Tudo aqui é pensado na sua experiência e em como podemos melhorar o seu dia, fazendo cada minuto e cada
+                conversa valer a <br>pena.</p>
+            <a href="contato.html"><button class="reservar">Vamos lá!</button></a>
+        </div>
+
+        <div class="card">
+            <img src="assets/pizza.svg" alt="pizza">
+        </div>
+    </main>
+
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho"></div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur do fundo -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Alerta -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <!-- 🔥 Firebase + Login com Google -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+            from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyChg78IvmjKTPP6ZZea-XX4_IzPwpHNxm8",
+            authDomain: "pizzaria-site2025.firebaseapp.com",
+            projectId: "pizzaria-site2025",
+            storageBucket: "pizzaria-site2025.firebasestorage.app",
+            messagingSenderId: "1085305272937",
+            appId: "1:1085305272937:web:b12950fb2ceca174d400f8",
+            measurementId: "G-5S5XDSXW7K"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        const loginBtn = document.getElementById('login-icon');
+        const userPhoto = document.getElementById('user-photo');
+
+        // 🔹 Garante que o popup não feche instantaneamente
+        provider.setCustomParameters({
+            prompt: "select_account" // força a exibir as contas do Google
+        });
+
+        // Login com Google
+        loginBtn.addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                console.log("Usuário logado:", user.displayName);
+            } catch (error) {
+                console.error("Erro ao fazer login:", error);
+            }
+        });
+
+        // Verifica o estado do usuário
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                userPhoto.src = user.photoURL;
+                userPhoto.style.display = 'block';
+                loginBtn.style.display = 'none';
+            } else {
+                userPhoto.style.display = 'none';
+                loginBtn.style.display = 'block';
+            }
+        });
+
+        // Logout ao clicar na foto
+        userPhoto.addEventListener('click', async () => {
+            const sair = confirm("Deseja sair da conta?");
+            if (sair) {
+                await signOut(auth);
+            }
+        });
+    </script>
+
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+</body>
+
+</html>

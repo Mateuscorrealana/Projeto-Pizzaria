@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrinho</title>
+</head>
+
+<body>
+    <!-- overlay escuro -->
+    <div id="blurFundo" class="blur-fundo" aria-hidden="true"></div>
+
+    <!-- carrinho lateral -->
+    <aside id="carrinhoLateral" class="carrinho-lateral" aria-hidden="true">
+        <button id="fecharCarrinho" class="fechar-carrinho">X</button>
+
+        <h2>Seu Carrinho</h2>
+
+        <div id="iconeVazio" class="icone-vazio">
+            <img src="carrinho/vazio.svg" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div id="itensCarrinho" class="itens-carrinho"></div>
+
+        <div class="total">
+            Total: R$ <span id="totalCarrinho">0,00</span>
+        </div>
+    </aside>
+
+</body>
+
+</html>

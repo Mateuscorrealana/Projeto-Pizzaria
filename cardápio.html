@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cardápio.css">
+    <title>Cardápio</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+
+        <div class="icones-topo">
+            <div class="login" title="Entrar">
+                <img src="favi icons/user 1.svg" alt="ícone de usuário">
+            </div>
+
+            <div class="carrinho" title="Carrinho" aria-label="Abrir carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+
+        <nav class="cabecalho">
+            <p class="btn-sobre">Sobre</p>
+            <p class="btn-cardapio">Cardápio</p>
+            <p class="btn-promocoes">Promoções</p>
+            <p class="btn-fidelidade">Fidelidade</p>
+            <p class="btn-contato">Contato</p>
+        </nav>
+    </header>
+
+
+    <main class="nosso-cardapio">
+        <div class="cardapio-fundo">
+            <img src="assets/cardapiofundo.jpg" alt="cardapio fundo">
+        </div>
+    </main>
+
+    <section class="fundos">
+        <div class="fundo-vermelho">
+            <img src="favi icons/retangulo esquerda.svg" alt="retangulo esquerda">
+            <img src="favi icons/retangulo direita.svg" alt="retangulo direita">
+        </div>
+
+        <div class="fundo-branco">
+            <h1>ESCOLHA 4 SABORES</h1>
+        </div>
+    </section>
+
+    <!-- cards: cada card já vem com preço e botão de adicionar (usa carrinho/plus.svg) -->
+    <section class="cards-pizza">
+        <!-- Exemplo de card; repita/adapte para cada sabor -->
+        <article class="card" data-price="39.90">
+            <img src="sabores de pizza/4 queijos.webp" alt="4 Queijos">
+            <div class="info-card">
+                <h3 class="nome">4 Queijos</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 39,90</span>
+                    <button class="btn-add" aria-label="Adicionar 4 Queijos">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="37.50">
+            <img src="sabores de pizza/Calabresa.webp" alt="Calabresa">
+            <div class="info-card">
+                <h3 class="nome">Calabresa</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 37,50</span>
+                    <button class="btn-add" aria-label="Adicionar Calabresa">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="35.00">
+            <img src="sabores de pizza/Maca.webp" alt="Maçã">
+            <div class="info-card">
+                <h3 class="nome">Maçã</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 35,00</span>
+                    <button class="btn-add" aria-label="Adicionar Maçã">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="40.00">
+            <img src="sabores de pizza/Pepperoni.webp" alt="Pepperoni">
+            <div class="info-card">
+                <h3 class="nome">Pepperoni</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 40,00</span>
+                    <button class="btn-add" aria-label="Adicionar Pepperoni">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- continue com os demais sabores (use o mesmo modelo acima, só troque img, nome e data-price) -->
+        <article class="card" data-price="38.00">
+            <img src="sabores de pizza/MilhoComBacon.webp" alt="Milho com Bacon">
+            <div class="info-card">
+                <h3 class="nome">Milho com Bacon</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 38,00</span>
+                    <button class="btn-add" aria-label="Adicionar Milho com Bacon">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="42.00">
+            <img src="sabores de pizza/5Queijos.webp" alt="5 Queijos">
+            <div class="info-card">
+                <h3 class="nome">5 Queijos</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 42,00</span>
+                    <button class="btn-add" aria-label="Adicionar 5 Queijos">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="39.00">
+            <img src="sabores de pizza/Bacon.webp" alt="Bacon">
+            <div class="info-card">
+                <h3 class="nome">Bacon</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 39,00</span>
+                    <button class="btn-add" aria-label="Adicionar Bacon">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="44.00">
+            <img src="sabores de pizza/CarneSeca.webp" alt="Carne Seca">
+            <div class="info-card">
+                <h3 class="nome">Carne Seca</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 44,00</span>
+                    <button class="btn-add" aria-label="Adicionar Carne Seca">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="32.00">
+            <img src="sabores de pizza/Chocolate.webp" alt="Chocolate">
+            <div class="info-card">
+                <h3 class="nome">Chocolate</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 32,00</span>
+                    <button class="btn-add" aria-label="Adicionar Chocolate">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="45.00">
+            <img src="sabores de pizza/LomboComCatupiry.webp" alt="Lombo com Catupiry">
+            <div class="info-card">
+                <h3 class="nome">Lombo com Catupiry</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 45,00</span>
+                    <button class="btn-add" aria-label="Adicionar Lombo com Catupiry">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="47.00">
+            <img src="sabores de pizza/Parma.webp" alt="Parma">
+            <div class="info-card">
+                <h3 class="nome">Parma</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 47,00</span>
+                    <button class="btn-add" aria-label="Adicionar Parma">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-price="36.50">
+            <img src="sabores de pizza/sensacao.webp" alt="Sensação">
+            <div class="info-card">
+                <h3 class="nome">Sensação</h3>
+                <div class="preco-add">
+                    <span class="preco">R$ 36,50</span>
+                    <button class="btn-add" aria-label="Adicionar Sensação">
+                        <img src="carrinho/plus.svg" alt="+">
+                    </button>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <!-- ícone central quando vazio -->
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho">
+            <!-- itens serão injetados pelo JS -->
+        </div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur atrás do carrinho -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Modal de alerta (máximo 4 pizzas) -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // mantém seu fetch do footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+</body>
+
+</html>

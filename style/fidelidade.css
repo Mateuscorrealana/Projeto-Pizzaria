@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+.principal-fidelidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    height: 100vh;
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.img-fidelidade img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 41px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-fidelidade {
+    position: relative;
+    background-color: #ff5858;
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px 50px;
+    right: 300px;
+    width: 500px;
+    box-shadow: 18px 0 18px #968e8e;
+}
+
+.card-fidelidade h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-fidelidade h2 span {
+    color: #fbad40;
+}
+
+.card-fidelidade p  {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card-fidelidade p span {
+    color: #fbad40;
+}
+
+.card-fidelidade ul {
+    list-style: none;
+}
+
+.card-fidelidade li {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-fidelidade img{
+    position: relative;
+    filter: brightness(0) invert(1);
+    align-items: center;
+    margin-left: 7px;
+}
+
+.card-fidelidade svg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+
+
+/* ===== Scrollbar personalizada (Google Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+    width: 6px;
+    /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe6d6;
+    /* cor do fundo da barra (trilho) */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fbad40;
+    /* cor da barra que se move */
+    border-radius: 10px;
+    border: 2px solid #ffe6d6;
+    /* cria espaçamento entre trilho e barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e4962f;
+    /* cor quando o mouse passa por cima */
+}
+
+/* ===== Firefox ===== */
+* {
+    scrollbar-color: var(--cor5) #000000;
+    /* cor da barra | cor do fundo */
+}
+
+::selection{
+    background-color: var(--cor5);
+}

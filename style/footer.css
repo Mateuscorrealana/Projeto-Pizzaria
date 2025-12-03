@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+body > *:not(#footer) {
+    flex: 1;
+}
+
+
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-top {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 230px;
+}
+
+.info-box img {
+    background-color: #FF5858;
+    padding: 10px;
+    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+}
+
+.info-box h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-middle {
+    background-color: #fbad40;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 470px;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-middle .col {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-middle h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-middle .col a {
+    color: #000;
+    text-decoration: none;
+    margin: 4px 0;
+    font-size: 15px;
+}
+
+.footer-middle .col a:hover{
+    text-decoration: underline;
+}
+
+.footer-middle .cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 120px;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.footer-middle .cartoes img {
+    width: 45px;
+}
+
+
+.descricao {
+    background-color: #fbad40;
+    text-align: center;
+    padding: 30px 20px 60px 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.descricao span {
+    color: #FF5858;
+}
+
+
+.footer-sobre {
+    background-color: #160806;
+    color: #D7CFCF;
+    display: flex;
+    justify-content: space-between; /* texto à esquerda, botões à direita */
+    align-items: center;
+    padding: 15px 40px;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-sobre p {
+    margin: 0;
+}
+
+.footer-sobre .footer-buttons {
+    display: flex;
+    gap: 15px; /* espaço entre os dois botões */
+}
+
+.footer-sobre button {
+    background-color: transparent;
+    border: none;
+    color: #D7CFCF;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+}
+
+.footer-sobre button:hover {
+    color: #fff;
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteudo-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF5858;
+    border-radius: 30px;
+    width: 65%;
+    height: 620px;
+    margin: 150px auto;
+    padding: 60px;
+    gap: 40px;
+}
+
+.texto {
+    flex: 1;
+}
+
+
+.texto h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 46px;
+    color: var(--cor3);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.texto p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.mom {
+    color: var(--cor1);
+}
+
+.reservar {
+    margin-top: 30px;
+    background-color: var(--cor1);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reservar:hover {
+    opacity: 0.9;
+    transform: scale(1.04);
+}
+
+/* ===== Scrollbar personalizada (Google Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+    width: 6px;
+    /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe6d6;
+    /* cor do fundo da barra (trilho) */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fbad40;
+    /* cor da barra que se move */
+    border-radius: 10px;
+    border: 2px solid #ffe6d6;
+    /* cria espaçamento entre trilho e barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e4962f;
+    /* cor quando o mouse passa por cima */
+}
+
+/* ===== Firefox ===== */
+* {
+    scrollbar-color: var(--cor5) #000000;
+    /* cor da barra | cor do fundo */
+}
+
+::selection{
+    background-color: var(--cor5);
+}

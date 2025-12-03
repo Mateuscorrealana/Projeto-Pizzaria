@@ -1,0 +1,18 @@
+body {
+    background-color: #00523F;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    color: white;
+    margin-top: 50px;
+}
+
+.retangulo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}

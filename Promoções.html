@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/promoções.css">
+    <title>Promoções</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+        <div class="icones-topo">
+            <div class="login">
+                <img src="favi icons/user 1.svg" alt="ícone de usuário">
+            </div>
+            <div class="carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+        <nav class="cabecalho">
+            <p>Sobre</p>
+            <p>Cardápio</p>
+            <p>Promoções</p>
+            <p>Fidelidade</p>
+            <p>Contato</p>
+        </nav>
+    </header>
+
+    <main>
+        <div class="promo">
+            <img src="favi icons/bolo.svg" alt="icon-bolo">
+            <h1>Promoção de <span>Aniversário</span></h1>
+            <img src="favi icons/bolo.svg" alt="icon-bolo">
+        </div>
+
+        <section class="princi">
+            <img src="assets/imagem-promo2.jpg" alt="promoções">
+            <div class="text">
+                <p>Comemore conosco no dia do seu aniversário e ganhe seu rodízio <br>totalmente de graça.</p>
+                <p>Confira o regulamento:</p>
+                <p><img src="favi icons/seta.svg" alt="seta"> O rodízio será gratuito para o aniversariante do dia que
+                    trouxer 3 <br>ou mais acompanhantes pagantes (valor integral);</p>
+                <p><img src="favi icons/seta.svg" alt="seta"> Esta promoção é válida somente para o dia do aniversário e
+                    <br>mediante a apresentação do documento de identidade ou <br>habilitação original;
+                </p>
+                <p><img src="favi icons/seta.svg" alt="seta"> A promoção é válida para o cliente que participarem do
+                    rodízio
+                    de <br>pizzas entre 18:30h e 23h59min do dia do seu aniversário;</p>
+                <p><img src="favi icons/seta.svg" alt="seta"> Valor integral: valor do rodízio sem descontos (infantil,
+                    bariátrica, <br>cortesias ou qualquer outra promoção).</p>
+                <a href="contato.html"><button class="reservar">Reservar Agora</button></a>
+            </div>
+        </section>
+    </main>
+
+    <div class="fundo">
+        <img src="assets/borda_promocoes.jpg" alt="borda">
+    </div>
+
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho"></div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur do fundo -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Alerta -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+
+    <footer id="footer"></footer>
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+
+</body>
+
+</html>

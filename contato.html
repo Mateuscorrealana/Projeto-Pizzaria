@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/contato.css">
+    <title>Contato-pizza</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+        <div class="icones-topo">
+            <div class="login">
+                <img src="favi icons/user 1.svg" alt="ícone de usuário">
+            </div>
+            <div class="carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+        <nav class="cabecalho">
+            <p>Sobre</p>
+            <p>Cardápio</p>
+            <p>Promoções</p>
+            <p>Fidelidade</p>
+            <p>Contato</p>
+        </nav>
+    </header>
+
+
+    <main class="conteudo-principal">
+        <img src="assets/fundo contato.jpg" alt="fundo do site">
+        <div class="cartao">
+            <h1>Solicite sua <span class="res">reserva</span></h1>
+            <p>Realizar uma reserva é uma ótima maneira de planejar a <br>sua vinda à nossa casa. Para garantir a melhor
+                <br>acomodação de todos os clientes e amigos, e poder <br>proporcionar a melhor experiência.
+            </p>
+            <img src="favi icons/check.svg" alt="check">
+            <img src="favi icons/check.svg" alt="check">
+            <img src="favi icons/check.svg" alt="check">
+            <div class="texto-cartao">
+                <p>Beneficios exclusivos</p>
+                <p>Agende o horario que quiser</p>
+                <p>Tolerancia de 5 minutos para todos os integrantes</p>
+            </div>
+            <div class="cartao-cancela">
+                <p>Caso haja algum imprevisto, pedimos que entre em <br>contato conosco para cancelar a reserva. Assim,
+                    poderemos manter a nossa qualidade de atendimento <br>e liberar a vaga para outros clientes.</p>
+                <button>Quero reservar</button>
+            </div>
+
+            <div class="mastercard">
+                <img src="favi icons/mastercard.svg" alt="cartao mastercard">
+            </div>
+        </div>
+    </main>
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho"></div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur do fundo -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Alerta -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/fidelidade.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Fidelidade</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+        <div class="icones-topo">
+            <div class="login">
+                <img src="favi icons/user 1.svg" alt="ícone de usuário">
+            </div>
+            <div class="carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+        <nav class="cabecalho">
+            <p>Sobre</p>
+            <p>Cardápio</p>
+            <p>Promoções</p>
+            <p>Fidelidade</p>
+            <p>Contato</p>
+        </nav>
+    </header>
+
+    <main class="principal-fidelidade">
+        <div class="img-fidelidade">
+            <img src="assets/pizza fundo 2.jpg" alt="pizza fundo">
+        </div>
+
+        <div class="card-fidelidade">
+            <h2><span>Pizzzaa’s</span> Club</h2>
+            <p>Na Pizzzaa’s, você é <span>muito mais do que só um cliente.</span></p>
+            <ul>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Os membros participam de premiações exclusivas.
+                    <img src="icons fidelidade/medalha.svg" alt="medalha">
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Horarios de atendimento exclusivo para membros.
+                    <img src="icons fidelidade/relogio.svg" alt="relogio">
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Acompanhe sua pontuação no portal do cliente.
+                    <img src="icons fidelidade/feliz.svg" alt="feliz">
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Resgate vouchers de desconto, rodízios e brindes.
+                    <img src="icons fidelidade/tag.svg" alt="tag">
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Promoções exclusivas para você e sua família.
+                    <img src="icons fidelidade/presente.svg" alt="presente">
+                </li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fba93a"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    Receba no conforto da sua casa com brindes.
+                    <img src="icons fidelidade/entrega.svg" alt="entrega">
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho"></div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur do fundo -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Alerta -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+
+</body>
+
+</html>

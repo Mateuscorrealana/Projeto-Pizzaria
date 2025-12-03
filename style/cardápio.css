@@ -1,0 +1,253 @@
+/* ---------- reset / base ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #160806;
+    color: #160806;
+}
+
+/* ---------- header (usa seu style/cabeçalho.css, mas aqui tem reforços visuais) ---------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    top: -25px;
+}
+
+.logo {
+    position: relative;
+    height: 48px;
+    cursor: pointer;
+    top: 1px;
+}
+
+.icones-topo {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    position: relative;
+}
+
+.icones-topo img {
+    height: 28px;
+    display: block;
+}
+
+/* contador badge no ícone de carrinho (adicionado via JS) */
+.carrinho,
+.login {
+    position: relative;
+    cursor: pointer;
+    top: 10px;
+}
+
+.contador-carrinho {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #FF5858;
+    color: white;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- hero / fundos ---------- */
+.cardapio-fundo img {
+    width: 100%;
+    display: block;
+}
+
+.fundo-vermelho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FF5858;
+    height: 100px;
+}
+
+.fundo-branco {
+    position: relative;
+    top: -290px;
+    width: 40%;
+    margin: 150px auto;
+    background: #fff;
+    border-radius: 30px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-branco h1 {
+    color: #fbad40;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* ---------- cards grid ---------- */
+.cards-pizza {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 60px;
+    padding: 20px 80px;
+    margin-top: -260px;
+    justify-items: center;
+}
+
+/* individual card */
+.card {
+    width: 271px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* info area with name, price and add */
+.info-card {
+    background: #fff;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nome {
+    color: #FF5858;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+.preco-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.preco {
+    font-weight: 700;
+    color: #160806;
+    font-size: 16px;
+}
+
+/* botão redondo com seu SVG */
+.btn-add {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF5858;
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease;
+}
+
+.btn-add img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.btn-add:hover {
+    transform: scale(1.06);
+    background: #e54444;
+}
+
+
+/* responsivo simples */
+@media (max-width:1100px) {
+    .cards-pizza {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 30px;
+        gap: 28px;
+    }
+}
+
+@media (max-width:800px) {
+    .cards-pizza {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -220px;
+    }
+
+    .carrinho-lateral {
+        width: 360px;
+    }
+}
+
+@media (max-width:480px) {
+    .cards-pizza {
+        grid-template-columns: 1fr;
+        padding: 20px 20px;
+        margin-top: -180px;
+    }
+
+    header {
+        padding: 12px;
+    }
+
+    .fundo-branco {
+        width: 85%;
+        padding: 28px;
+        margin: 120px auto;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe6d6;
+    /* cor do fundo da barra (trilho) */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fbad40;
+    /* cor da barra que se move */
+    border-radius: 10px;
+    border: 2px solid #ffe6d6;
+    /* cria espaçamento entre trilho e barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e4962f;
+    /* cor quando o mouse passa por cima */
+}
+
+/* ===== Firefox ===== */
+* {
+    scrollbar-color: var(--cor5) #000000;
+    /* cor da barra | cor do fundo */
+}
+
+::selection {
+    background-color: var(--cor5);
+}

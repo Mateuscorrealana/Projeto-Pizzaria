@@ -1,0 +1,264 @@
+/* ---------- carrinho lateral ---------- */
+.carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100vh;
+    background: #fff;
+    z-index: 10001;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right .35s ease;
+    border-left: 4px solid #FF5858;
+}
+
+.carrinho-lateral.ativo {
+    right: 0;
+}
+
+.topo-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.topo-carrinho h2 {
+    color: #FF5858;
+    font-size: 22px;
+}
+
+.btn-fechar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-fechar img {
+    width: 20px;
+    height: 20px;
+    filter: invert(36%) sepia(64%) saturate(686%) hue-rotate(338deg) brightness(96%) contrast(90%);
+}
+
+/* ícone central quando vazio */
+.icone-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 0;
+    color: #777;
+}
+
+.icone-vazio img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    opacity: 0.95;
+}
+
+/* área com itens */
+.itens-carrinho {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 6px;
+}
+
+/* item padrão no carrinho */
+.item-carrinho {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: #fff0f0;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.img-item {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.info-item p {
+    font-weight: 700;
+    color: #160806;
+    margin: 0;
+}
+
+.info-item span {
+    color: #333;
+    font-weight: 600;
+}
+
+/* contador de quantidade (caixa com + e -) */
+.qty-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: transparent;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.qty-controls button {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background: #FF5858;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .12s ease, transform .12s ease;
+}
+
+.qty-controls button img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+}
+
+.qty-controls .qty {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #160806;
+    font-size: 14px;
+    background: #fff;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+/* botão remover (lixeira) */
+.btn-remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remove img {
+    width: 18px;
+    height: 18px;
+    filter: invert(17%) sepia(97%) saturate(7491%) hue-rotate(1deg) brightness(95%) contrast(109%);
+}
+
+/* footer do carrinho */
+.footer-carrinho {
+    border-top: 2px solid #FF5858;
+    padding-top: 14px;
+    margin-top: 10px;
+}
+
+.total-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.total-line p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.footer-carrinho strong {
+    font-size: 20px;
+    color: #160806;
+}
+
+/* finalizar */
+.finalizar-pedido {
+    width: 100%;
+    padding: 12px;
+    background: #FF5858;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.finalizar-pedido:hover {
+    background: #e54444;
+}
+
+/* blur atrás do carrinho */
+.blur-fundo {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 10000;
+}
+
+.blur-fundo.ativo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* alerta central (máximo 4 sabores) */
+.alerta-max {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 22px 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    z-index: 10002;
+    display: none;
+    text-align: center;
+}
+
+.alerta-max p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #160806;
+}
+
+.btn-alerta {
+    background: #FF5858;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-alerta:hover {
+    background: #e54444;
+}
