@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/cadastro.css">
+    <title>Cadastro Pizzaria</title>
+</head>
+
+<body>
+
+    <div class="container-geral">
+        <div class="left">
+            <img src="assets-login/vetor-cima.svg" class="decor-top" alt="">
+            <img src="assets-login/vetor-baixo.svg" class="decor-bottom" alt="">
+
+            <h1 class="logo">Pizzaaa<span>’</span>s</h1>
+            <h2>Crie sua conta</h2>
+
+            <form class="form">
+
+                <label>Nome *</label>
+                <div class="input-box">
+                    <input type="text" placeholder="Digite seu nome">
+                </div>
+
+                <label>Sobrenome *</label>
+                <div class="input-box">
+                    <input type="text" placeholder="Digite seu sobrenome">
+                </div>
+
+                <label>CPF *</label>
+                <div class="input-box">
+                    <input type="text" id="cpf" placeholder="Digite seu CPF">
+                </div>
+
+                <label>Email *</label>
+                <div class="input-box">
+                    <img src="assets-login/Message.svg" class="icon">
+                    <input type="email" placeholder="Digite seu email">
+                </div>
+
+                <label>Confirme seu Email *</label>
+                <div class="input-box">
+                    <img src="assets-login/Message.svg" class="icon">
+                    <input type="email" placeholder="Digite seu email">
+                </div>
+
+                <label>Senha *</label>
+                <div class="input-box">
+                    <img src="assets-login/Lock.svg" class="icon">
+                    <input type="password" id="senha1" placeholder="Digite sua senha">
+                    <img src="assets-login/olho-fechado.svg" id="toggleSenha1" class="eye">
+                </div>
+
+                <label>Confirme sua Senha *</label>
+                <div class="input-box">
+                    <img src="assets-login/Lock.svg" class="icon">
+                    <input type="password" id="senha2" placeholder="Confirme sua senha">
+                    <img src="assets-login/olho-fechado.svg" id="toggleSenha2" class="eye">
+                </div>
+
+                <button class="btn-entrar">Cadastrar</button>
+
+                <p class="no-account">Já uma conta?
+                    <a href="login.html">Acesse aqui</a>
+                </p>
+
+            </form>
+
+        </div>
+
+        <!-- Coluna Direita (Imagem da pizza) -->
+        <div class="right">
+            <img src="assets/pizza fundo 2.jpg" class="img-pizza" alt="">
+        </div>
+
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+
+</html>

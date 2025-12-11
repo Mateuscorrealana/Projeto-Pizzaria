@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/login.css">
     <title>Login Pizzaria</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="avatar-icon"><img src="assets-login/avatar-icon.svg" alt=""></div>
-        <h1>Olá, Seja Bem Vindo</h1>
-        <h2>Faça seu Cadastro ou Login abaixo</h2>
-        <form>
-            <label for="username">Nome de usuário:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Login">
-        </form>
+
+    <div class="container-geral">
+        <div class="left">
+            <img src="assets-login/vetor-cima.svg" class="decor-top" alt="">
+            <img src="assets-login/vetor-baixo.svg" class="decor-bottom" alt="">
+
+            <h1 class="logo">Pizzaaa<span>’</span>s</h1>
+
+            <img src="assets-login/icon-boneco.png" class="avatar" alt="avatar">
+
+            <form class="form">
+
+                <label>Email *</label>
+                <div class="input-box">
+                    <img src="assets-login/Message.svg" class="icon">
+                    <input type="email" placeholder="Digite seu email">
+                </div>
+
+                <label>Senha *</label>
+                <div class="input-box">
+                    <img src="assets-login/Lock.svg" class="icon">
+                    <input type="password" id="senha" placeholder="Digite sua senha">
+                    <img src="assets-login/olho-fechado.svg" id="toggleSenha" class="eye">
+                </div>
+
+
+                <a class="forgot">Esqueceu sua senha?</a>
+
+                <button class="btn-entrar">Entrar</button>
+
+                <button class="btn-google">
+                    <img src="assets-login/google.png">
+                    Continue com Google
+                </button>
+
+                <p class="no-account">Não tem uma conta?
+                    <a href="cadastro.html">Crie aqui</a>
+                </p>
+
+            </form>
+
+        </div>
+
+        <!-- Coluna Direita (Imagem da pizza) -->
+        <div class="right">
+            <img src="assets/pizza fundo 2.jpg" class="img-pizza" alt="">
+        </div>
+
     </div>
-    <div class="retangulo">
-        <img src="assets-login/Rectangle 1.svg" alt="retangulo">
-    </div>
-    <div>
-        <img src="assets-login/luz.svg" alt="luz icon">
-    </div>
+
+    <script src="login.js"></script>
 </body>
+
 </html>

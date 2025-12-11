@@ -21,7 +21,7 @@ body {
     position: relative;
     overflow: hidden;
     width: 50%;
-    padding: 40px;
+    padding: 2px;
     background: #ff6b63;
     display: flex;
     flex-direction: column;
@@ -154,17 +154,15 @@ label {
 .decor-top,
 .decor-bottom {
     position: absolute;
-    width: 380px;   
+    width: 260px;   
     z-index: 0;       
 }
 
 .decor-top {
     top: -70px;      
     right: -60px;
-    
 }
 
-/* Baixo esquerda */
 .decor-bottom {
     bottom: -40px;
     left: -70px;

@@ -1,137 +1,147 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
-/* ===========================
-   CONFIGURAÇÕES
-   =========================== */
-const homePage = 'inicio.html';
-const MAX_PIZZAS = 4;
+    /* ===========================
+       CONFIGURAÇÕES
+       =========================== */
+    const homePage = 'inicio.html';
+    const MAX_PIZZAS = 4;
 
-/* ===========================
-   ELEMENTOS DO HEADER
-   =========================== */
-const logo = document.querySelector('.logo');
-const carrinhoWrapper = document.querySelector(".carrinho");
-const botaoCarrinhoImg = carrinhoWrapper?.querySelector("img");
+    /* ===========================
+       TOAST - ITEM ADICIONADO
+       =========================== */
+    function showToast() {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
 
-/* Badge do carrinho */
-let contadorBadge = document.querySelector(".contador-carrinho");
-if (!contadorBadge && carrinhoWrapper) {
-    contadorBadge = document.createElement("span");
-    contadorBadge.className = "contador-carrinho";
-    contadorBadge.innerText = "0";
-    carrinhoWrapper.appendChild(contadorBadge);
-}
-
-/* Clique na logo → voltar para home */
-if (logo) {
-    logo.addEventListener("click", () => {
-        window.location.href = homePage;
-    });
-}
-
-/* ===========================
-   CARRINHO — CAPTURA DE ELEMENTOS
-   =========================== */
-function getCarrinhoElements() {
-    return {
-        carrinhoLateral: document.getElementById("carrinhoLateral"),
-        fecharCarrinhoBtn: document.getElementById("fecharCarrinho"),
-        blurFundo: document.getElementById("blurFundo"),
-        itensCarrinhoEl: document.getElementById("itensCarrinho"),
-        totalCarrinhoEl: document.getElementById("totalCarrinho"),
-        iconeVazio: document.getElementById("iconeVazio"),
-        alertaMax: document.getElementById("alertaMax"),
-        fecharAlertaBtn: document.getElementById("fecharAlerta")
-    };
-}
-
-/* ===========================
-   LOCALSTORAGE
-   =========================== */
-let carrinho = [];
-try {
-    carrinho = JSON.parse(localStorage.getItem("carrinhoPizzaria")) || [];
-} catch {
-    carrinho = [];
-}
-
-function salvarCarrinho() {
-    localStorage.setItem("carrinhoPizzaria", JSON.stringify(carrinho));
-}
-
-/* ===========================
-   ABRIR / FECHAR CARRINHO
-   =========================== */
-function abrirCarrinho() {
-    const { carrinhoLateral, blurFundo } = getCarrinhoElements();
-    if (!carrinhoLateral) return;
-    carrinhoLateral.classList.add("ativo");
-    blurFundo?.classList.add("ativo");
-}
-
-function fecharCarrinho() {
-    const { carrinhoLateral, blurFundo } = getCarrinhoElements();
-    if (!carrinhoLateral) return;
-    carrinhoLateral.classList.remove("ativo");
-    blurFundo?.classList.remove("ativo");
-}
-
-botaoCarrinhoImg?.addEventListener("click", abrirCarrinho);
-document.addEventListener("keydown", (e) => e.key === "Escape" && fecharCarrinho());
-
-/* ===========================
-   ALERTA DE LIMITE
-   =========================== */
-function mostrarAlertaMax() {
-    const { alertaMax } = getCarrinhoElements();
-    alertaMax.style.display = "block";
-    alertaMax.setAttribute("aria-hidden", "false");
-}
-
-function fecharAlertaMax() {
-    const { alertaMax } = getCarrinhoElements();
-    alertaMax.style.display = "none";
-    alertaMax.setAttribute("aria-hidden", "true");
-}
-
-/* ===========================
-   ATUALIZAR UI DO CARRINHO
-   =========================== */
-function atualizarCarrinhoUI() {
-    const {
-        itensCarrinhoEl,
-        totalCarrinhoEl,
-        iconeVazio,
-        fecharCarrinhoBtn,
-        blurFundo,
-        fecharAlertaBtn
-    } = getCarrinhoElements();
-
-    /* Atualiza badge */
-    const totalItems = carrinho.reduce((s, i) => s + i.qty, 0);
-    contadorBadge.innerText = totalItems;
-
-    if (!itensCarrinhoEl) return;
-
-    fecharCarrinhoBtn && (fecharCarrinhoBtn.onclick = fecharCarrinho);
-    blurFundo && (blurFundo.onclick = fecharCarrinho);
-    fecharAlertaBtn && (fecharAlertaBtn.onclick = fecharAlertaMax);
-
-    itensCarrinhoEl.innerHTML = "";
-
-    if (totalItems === 0) {
-        iconeVazio.style.display = "flex";
-        totalCarrinhoEl.innerText = "0,00";
-        return;
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 1800);
     }
 
-    iconeVazio.style.display = "none";
+    /* ===========================
+       ALERTA - ITEM REMOVIDO
+       =========================== */
+    function mostrarRemovido() {
+        const alertaRemo = document.getElementById("item-remo");
+        alertaRemo.classList.add("show");
 
-    carrinho.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.className = "item-carrinho";
-        div.innerHTML = `
+        setTimeout(() => {
+            alertaRemo.classList.remove("show");
+        }, 1800);
+    }
+
+    /* ===========================
+       ELEMENTOS DO HEADER
+       =========================== */
+    const logo = document.querySelector('.logo');
+    const carrinhoWrapper = document.querySelector(".carrinho");
+
+    let contadorBadge = document.querySelector(".contador-carrinho");
+    if (!contadorBadge && carrinhoWrapper) {
+        contadorBadge = document.createElement("span");
+        contadorBadge.className = "contador-carrinho";
+        contadorBadge.innerText = "0";
+        carrinhoWrapper.appendChild(contadorBadge);
+    }
+
+    if (logo) {
+        logo.addEventListener("click", () => {
+            window.location.href = homePage;
+        });
+    }
+
+    /* ===========================
+       CARRINHO — ELEMENTOS
+       =========================== */
+    function getCarrinhoElements() {
+        return {
+            carrinhoLateral: document.getElementById("carrinhoLateral"),
+            fecharCarrinhoBtn: document.getElementById("fecharCarrinho"),
+            blurFundo: document.getElementById("blurFundo"),
+            itensCarrinhoEl: document.getElementById("itensCarrinho"),
+            totalCarrinhoEl: document.getElementById("totalCarrinho"),
+            iconeVazio: document.getElementById("iconeVazio"),
+            alertaMax: document.getElementById("alertaMax"),
+            fecharAlertaBtn: document.getElementById("fecharAlerta")
+        };
+    }
+
+    /* ===========================
+       LOCALSTORAGE
+       =========================== */
+    let carrinho = [];
+    try {
+        carrinho = JSON.parse(localStorage.getItem("carrinhoPizzaria")) || [];
+    } catch {
+        carrinho = [];
+    }
+
+    function salvarCarrinho() {
+        localStorage.setItem("carrinhoPizzaria", JSON.stringify(carrinho));
+    }
+
+    /* ===========================
+       ABRIR / FECHAR CARRINHO
+       =========================== */
+    function abrirCarrinho() {
+        const { carrinhoLateral, blurFundo } = getCarrinhoElements();
+        carrinhoLateral.classList.add("ativo");
+        blurFundo.classList.add("ativo");
+    }
+
+    function fecharCarrinho() {
+        const { carrinhoLateral, blurFundo } = getCarrinhoElements();
+        carrinhoLateral.classList.remove("ativo");
+        blurFundo.classList.remove("ativo");
+    }
+
+    document.querySelector(".carrinho img")?.addEventListener("click", abrirCarrinho);
+    document.addEventListener("keydown", (e) => e.key === "Escape" && fecharCarrinho());
+
+    /* ===========================
+       ALERTA 4 ITENS
+       =========================== */
+    function mostrarAlertaMax() {
+        const { alertaMax } = getCarrinhoElements();
+        alertaMax.style.display = "block";
+        alertaMax.setAttribute("aria-hidden", "false");
+    }
+
+    function fecharAlertaMax() {
+        const { alertaMax } = getCarrinhoElements();
+        alertaMax.style.display = "none";
+        alertaMax.setAttribute("aria-hidden", "true");
+    }
+
+    /* ===========================
+       ATUALIZAR UI DO CARRINHO
+       =========================== */
+    function atualizarCarrinhoUI() {
+        const {
+            itensCarrinhoEl,
+            totalCarrinhoEl,
+            iconeVazio,
+            fecharCarrinhoBtn,
+            blurFundo,
+            fecharAlertaBtn
+        } = getCarrinhoElements();
+
+        const totalItems = carrinho.reduce((s, i) => s + i.qty, 0);
+        contadorBadge.innerText = totalItems;
+
+        itensCarrinhoEl.innerHTML = "";
+
+        if (totalItems === 0) {
+            iconeVazio.style.display = "flex";
+            totalCarrinhoEl.innerText = "0,00";
+        } else {
+            iconeVazio.style.display = "none";
+        }
+
+        carrinho.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "item-carrinho";
+            div.innerHTML = `
             <img src="${item.imagem}" class="img-item">
             <div class="info-item">
                 <p>${item.nome}</p>
@@ -148,84 +158,96 @@ function atualizarCarrinhoUI() {
                 <img src="carrinho/trash-2 2.svg">
             </button>
         `;
-        itensCarrinhoEl.appendChild(div);
-    });
+            itensCarrinhoEl.appendChild(div);
+        });
 
-    const total = carrinho.reduce((s, it) => s + it.preco * it.qty, 0);
-    totalCarrinhoEl.innerText = total.toFixed(2);
+        totalCarrinhoEl.innerText = carrinho
+            .reduce((s, it) => s + it.preco * it.qty, 0)
+            .toFixed(2);
 
-    /* Aumentar */
-    itensCarrinhoEl.querySelectorAll(".btn-increase").forEach(btn => {
+        /* ========== AUMENTAR ========== */
+        itensCarrinhoEl.querySelectorAll(".btn-increase").forEach(btn => {
+            btn.onclick = () => {
+                const idx = Number(btn.closest(".qty-controls").dataset.index);
+
+                const total = carrinho.reduce((s, it) => s + it.qty, 0);
+                if (total >= MAX_PIZZAS) return mostrarAlertaMax();
+
+                carrinho[idx].qty++;
+                salvarCarrinho();
+                atualizarCarrinhoUI();
+            };
+        });
+
+        /* ========== DIMINUIR ========== */
+        itensCarrinhoEl.querySelectorAll(".btn-decrease").forEach(btn => {
+            btn.onclick = () => {
+                const idx = Number(btn.closest(".qty-controls").dataset.index);
+
+                if (carrinho[idx].qty > 1) {
+                    carrinho[idx].qty--;
+                    mostrarRemovido(); // 🔥 mostra removido
+                } else {
+                    carrinho.splice(idx, 1);
+                    mostrarRemovido(); // 🔥 mostra removido
+                }
+
+                salvarCarrinho();
+                atualizarCarrinhoUI();
+            };
+        });
+
+        /* ========== REMOVER ========== */
+        itensCarrinhoEl.querySelectorAll(".btn-remove").forEach(btn => {
+            btn.onclick = () => {
+                const idx = Number(btn.dataset.index);
+                carrinho.splice(idx, 1);
+
+                salvarCarrinho();
+                atualizarCarrinhoUI();
+                mostrarRemovido(); // 🔥 mostra removido
+            };
+        });
+
+        fecharCarrinhoBtn.onclick = fecharCarrinho;
+        blurFundo.onclick = fecharCarrinho;
+        fecharAlertaBtn.onclick = fecharAlertaMax;
+    }
+
+    atualizarCarrinhoUI();
+
+    /* ===========================
+       ADICIONAR ITEM
+       =========================== */
+    document.querySelectorAll(".card").forEach((card) => {
+        const btn = card.querySelector(".btn-add");
+
         btn.onclick = () => {
-            const idx = Number(btn.closest(".qty-controls").dataset.index);
-            const total = carrinho.reduce((s, it) => s + it.qty, 0);
+            const nome = card.querySelector(".nome").innerText;
+            const img = card.querySelector("img")?.src || "";
+            const preco = Number(card.dataset.price);
 
+            const total = carrinho.reduce((s, it) => s + it.qty, 0);
             if (total >= MAX_PIZZAS) return mostrarAlertaMax();
 
-            carrinho[idx].qty++;
-            salvarCarrinho();
-            atualizarCarrinhoUI();
-        };
-    });
+            let item = carrinho.find(i => i.nome === nome);
 
-    /* Diminuir */
-    itensCarrinhoEl.querySelectorAll(".btn-decrease").forEach(btn => {
-        btn.onclick = () => {
-            const idx = Number(btn.closest(".qty-controls").dataset.index);
-
-            if (carrinho[idx].qty === 1) {
-                carrinho.splice(idx, 1);
-            } else {
-                carrinho[idx].qty--;
-            }
+            if (item) item.qty++;
+            else carrinho.push({ id: Date.now(), nome, imagem: img, preco, qty: 1 });
 
             salvarCarrinho();
             atualizarCarrinhoUI();
+            showToast(); // 🔥 mostra TOAST
         };
     });
-
-    /* Remover */
-    itensCarrinhoEl.querySelectorAll(".btn-remove").forEach(btn => {
-        btn.onclick = () => {
-            const idx = Number(btn.dataset.index);
-            carrinho.splice(idx, 1);
-            salvarCarrinho();
-            atualizarCarrinhoUI();
-        };
-    });
-}
-
-atualizarCarrinhoUI();
-
-/* ===========================
-   ADICIONAR ITEM AO CARRINHO
-   =========================== */
-document.querySelectorAll(".card").forEach((card) => {
-    const btn = card.querySelector(".btn-add");
-    if (!btn) return;
-
-    btn.onclick = () => {
-        const nome = card.querySelector(".nome").innerText;
-        const img = card.querySelector("img")?.src || "";
-        const preco = Number(card.dataset.price) || 0;
-
-        const total = carrinho.reduce((s, it) => s + it.qty, 0);
-        if (total >= MAX_PIZZAS) return mostrarAlertaMax();
-
-        let item = carrinho.find(i => i.nome === nome);
-
-        if (item) item.qty++;
-        else carrinho.push({ id: Date.now(), nome, imagem: img, preco, qty: 1 });
-
-        salvarCarrinho();
-        atualizarCarrinhoUI();
-    };
-});
 
 });
 
-/* ===========================
-   TORNAR FUNÇÕES ACESSÍVEIS
-   =========================== */
-window.abrirCarrinho = abrirCarrinho;
-window.fecharCarrinho = fecharCarrinho;
+
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("dragstart", (e) => e.preventDefault());
+});
+
+document.addEventListener("dragstart", (e) => {
+  e.preventDefault();
+});
