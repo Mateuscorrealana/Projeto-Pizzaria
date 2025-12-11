@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        CONFIGURAÇÕES
-       =========================== */
+    =========================== */
     const homePage = 'inicio.html';
     const MAX_PIZZAS = 4;
 
     /* ===========================
        TOAST - ITEM ADICIONADO
-       =========================== */
+    =========================== */
     function showToast() {
         const toast = document.getElementById("toast");
         toast.classList.add("show");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        ALERTA - ITEM REMOVIDO
-       =========================== */
+    =========================== */
     function mostrarRemovido() {
         const alertaRemo = document.getElementById("item-remo");
         alertaRemo.classList.add("show");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        ELEMENTOS DO HEADER
-       =========================== */
+    =========================== */
     const logo = document.querySelector('.logo');
     const carrinhoWrapper = document.querySelector(".carrinho");
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        CARRINHO — ELEMENTOS
-       =========================== */
+    =========================== */
     function getCarrinhoElements() {
         return {
             carrinhoLateral: document.getElementById("carrinhoLateral"),
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        LOCALSTORAGE
-       =========================== */
+    =========================== */
     let carrinho = [];
     try {
         carrinho = JSON.parse(localStorage.getItem("carrinhoPizzaria")) || [];
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        ABRIR / FECHAR CARRINHO
-       =========================== */
+    =========================== */
     function abrirCarrinho() {
         const { carrinhoLateral, blurFundo } = getCarrinhoElements();
         carrinhoLateral.classList.add("ativo");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        ALERTA 4 ITENS
-       =========================== */
+    =========================== */
     function mostrarAlertaMax() {
         const { alertaMax } = getCarrinhoElements();
         alertaMax.style.display = "block";
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
        ATUALIZAR UI DO CARRINHO
-       =========================== */
+    =========================== */
     function atualizarCarrinhoUI() {
         const {
             itensCarrinhoEl,
@@ -186,10 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (carrinho[idx].qty > 1) {
                     carrinho[idx].qty--;
-                    mostrarRemovido(); // 🔥 mostra removido
+                    mostrarRemovido();
                 } else {
                     carrinho.splice(idx, 1);
-                    mostrarRemovido(); // 🔥 mostra removido
+                    mostrarRemovido();
                 }
 
                 salvarCarrinho();
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 salvarCarrinho();
                 atualizarCarrinhoUI();
-                mostrarRemovido(); // 🔥 mostra removido
+                mostrarRemovido();
             };
         });
 
@@ -217,8 +217,8 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarCarrinhoUI();
 
     /* ===========================
-       ADICIONAR ITEM
-       =========================== */
+       ADICIONAR ITEM COM ANIMAÇÃO
+    =========================== */
     document.querySelectorAll(".card").forEach((card) => {
         const btn = card.querySelector(".btn-add");
 
@@ -231,23 +231,64 @@ document.addEventListener("DOMContentLoaded", () => {
             if (total >= MAX_PIZZAS) return mostrarAlertaMax();
 
             let item = carrinho.find(i => i.nome === nome);
-
             if (item) item.qty++;
             else carrinho.push({ id: Date.now(), nome, imagem: img, preco, qty: 1 });
 
             salvarCarrinho();
             atualizarCarrinhoUI();
-            showToast(); // 🔥 mostra TOAST
+            showToast();
+
+            // ===== ANIMAÇÃO VOANDO PARA O CARRINHO =====
+            const cartIcon = document.querySelector(".carrinho img");
+            const pizzaImg = card.querySelector("img");
+
+            const flyingImg = pizzaImg.cloneNode(true);
+            flyingImg.classList.add("flying-img");
+            document.body.appendChild(flyingImg);
+
+            const rect = pizzaImg.getBoundingClientRect();
+            flyingImg.style.left = rect.left + "px";
+            flyingImg.style.top = rect.top + "px";
+
+            // força o reflow
+            flyingImg.getBoundingClientRect();
+
+            const cartRect = cartIcon.getBoundingClientRect();
+            flyingImg.style.transform = `translate(${cartRect.left - rect.left}px, ${cartRect.top - rect.top}px) scale(0.2)`;
+            flyingImg.style.opacity = "0.5";
+
+            flyingImg.addEventListener("transitionend", () => {
+                flyingImg.remove();
+            });
         };
+    });
+
+    /* ===========================
+       BLOQUEAR ARRASTAR IMAGENS
+    =========================== */
+    document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("dragstart", (e) => e.preventDefault());
+    });
+
+    document.addEventListener("dragstart", (e) => {
+        e.preventDefault();
     });
 
 });
 
-
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("dragstart", (e) => e.preventDefault());
+const loginIcon = document.getElementById('login-icon');
+loginIcon.addEventListener('click', () => {
+    window.location.href = 'login.html';
 });
 
-document.addEventListener("dragstart", (e) => {
-  e.preventDefault();
+
+const menuItems = document.querySelectorAll('.cabecalho p');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove a classe de todos
+        menuItems.forEach(i => i.classList.remove('active'));
+        // Adiciona a classe no item clicado
+        item.classList.add('active');
+    });
 });

@@ -112,6 +112,13 @@ header {
     position: relative;
 }
 
+.cabecalho p#ativo {
+    color: var(--cor1);
+}
+.cabecalho p#ativo::after {
+    width: 100%;
+}
+
 .cabecalho p::after {
     content: "";
     position: absolute;
