@@ -21,12 +21,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 90px;
     background-color: #fff;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 80px;
+    padding: 0px 80px;
 }
 
 
@@ -36,9 +37,8 @@ header {
     width: 120px;
     height: auto;
     margin-left: 15%;
-    margin-top: 25px;
+    margin-top: -20px;
     cursor: pointer;
-    top: -10px;
 }
 
 .icones-topo {
@@ -56,7 +56,7 @@ header {
     gap: 10px;
     margin-right: 20px;
     cursor: pointer;
-    top: -2px;
+    top: -12px;
 }
 
 
@@ -115,6 +115,7 @@ header {
 .cabecalho p#ativo {
     color: var(--cor1);
 }
+
 .cabecalho p#ativo::after {
     width: 100%;
 }

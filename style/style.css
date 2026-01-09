@@ -41,9 +41,6 @@
     max-width: 500px;
 }
 
-.mom {
-    color: var(--cor1);
-}
 
 .reservar {
     margin-top: 30px;
@@ -147,3 +144,4 @@
 ::selection{
     background-color: var(--cor5);
 }
+

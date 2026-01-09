@@ -1,27 +1,6 @@
-/* img redonda sobre o carrinho */
-
-/* imagem flutuando acima do carrinho */
-/* imagem do vetor sobre o carrinho */
-/* imagem do vetor sobre o carrinho */
-.img-redondo {
-    position: fixed;
-    top: 10vh;              /* mesmo top do carrinho */
-    right: 200px;           /* metade da largura do carrinho (400px / 2) */
-    transform: translateX(50%); /* centraliza sobre o carrinho */        /* acima do carrinho */
-    pointer-events: none;   /* não bloqueia cliques */
+body {
+    font-family: 'Poppins', sans-serif;
 }
-
-.img-redondo img {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background: #fff;
-    padding: 10px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-    display: block;
-}
-
-
 /* ---------- carrinho lateral ---------- */
 .carrinho-lateral {
     position: fixed;

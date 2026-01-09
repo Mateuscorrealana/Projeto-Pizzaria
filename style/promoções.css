@@ -12,6 +12,13 @@ html, body {
     overflow-x: hidden;
 }
 
+header {
+    width: 100%;
+    max-width: 100vw;
+    position: fixed;
+    z-index: 1000;
+}
+
 /* seção superior */
 .promo {
     display: flex;
@@ -126,8 +133,39 @@ html, body {
     scroll-behavior: auto;
 }
 
-body::-webkit-scrollbar {
-    display: none; /* esconde qualquer barra */
+/* ===== Scrollbar personalizada (Google Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+    width: 6px;
+    /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe6d6;
+    /* cor do fundo da barra (trilho) */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fbad40;
+    /* cor da barra que se move */
+    border-radius: 10px;
+    border: 2px solid #ffe6d6;
+    /* cria espaçamento entre trilho e barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e4962f;
+    /* cor quando o mouse passa por cima */
+}
+
+/* ===== Firefox ===== */
+* {
+    scrollbar-color: var(--cor5) #000000;
+    /* cor da barra | cor do fundo */
+}
+
+::selection{
+    background-color: var(--cor5);
 }
 
 .toast {

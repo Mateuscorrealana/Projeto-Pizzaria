@@ -18,11 +18,19 @@ html, body {
 }
 
 header {
-    background-color: var(--cor2);
+    width: 100%;
+    max-width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    background-color: #A23232;
+}
+
+.login img, .carrinho img {
+    filter: brightness(0) invert(1);
 }
 
 .cabecalho p{
-    color: #000;
+    color: var(--cor2);
     font-weight: 530;
 }
 

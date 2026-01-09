@@ -11,3 +11,12 @@ toggleSenha.addEventListener('click', () => {
         ? "assets-login/olho-aberto.svg"
         : "assets-login/olho-fechado.svg";
 });
+
+
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("dragstart", (e) => e.preventDefault());
+});
+
+document.addEventListener("dragstart", (e) => {
+    e.preventDefault();
+});

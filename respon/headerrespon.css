@@ -1,0 +1,152 @@
+/* ==================================================
+   PADRÃO (DESKTOP) — ESCONDE MENU MOBILE
+================================================== */
+
+/* Menu hambúrguer e menu lateral NÃO aparecem no PC */
+.menu-mobile-icon,
+.menu-lateral {
+    display: none;
+}
+
+/* ==================================================
+   RESPONSIVO — MOBILE
+================================================== */
+@media (max-width: 950px) {
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    /* Esconde menu horizontal do desktop */
+    nav.cabecalho {
+        display: none !important;
+    }
+
+    /* Header ajustado para mobile */
+    header {
+        padding: 20px !important;
+        justify-content: space-between !important;
+    }
+
+    /* Logo menor (igual Figma) */
+    .logo {
+        width: 120px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Ícones do topo */
+    .icones-topo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-right: 0 !important;
+    }
+
+    .login, .carrinho {
+        display: flex !important;
+        top: 3px !important;
+    }
+
+    .icones-topo img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* =========================
+       MENU MOBILE
+    ========================= */
+
+    /* Mostra ícone do menu (hambúrguer) */
+    .menu-mobile-icon {
+        display: block !important;
+    }
+
+    #openMenu,
+    #closeMenu {
+        width: 32px !important;
+        cursor: pointer !important;
+    }
+
+    /* Menu lateral (visível só no mobile, JS controla abertura) */
+    .menu-lateral {
+        display: block;
+    }
+
+    /* =========================
+       CONTEÚDO PRINCIPAL
+    ========================= */
+
+    .conteudo-principal {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .texto h1 {
+        font-size: 34px;
+    }
+
+    .texto p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .card img {
+        width: 240px;
+    }
+}
+
+/* ============================
+   RESPONSIVIDADE DO CABEÇALHO
+   (NÃO ALTERA O DESKTOP)
+============================ */
+
+@media (max-width: 950px) {
+
+    /* Esconde o menu horizontal */
+    nav.cabecalho {
+        display: none !important;
+    }
+
+    /* Ajusta o header para mobile */
+    header {
+        padding: 20px 20px !important;
+        justify-content: space-between !important;
+    }
+
+    /* Logo menor igual ao Figma */
+    .logo {
+        width: 120px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Icons alinhados igual ao print */
+    .icones-topo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-right: 0 !important;
+    }
+
+    .icones-topo img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* Mostra o menu mobile (hambúrguer) */
+    .menu-mobile-icon {
+        display: block !important;
+    }
+
+    /* Remove o display none do desktop */
+    #openMenu, #closeMenu {
+        width: 32px !important;
+        cursor: pointer !important;
+    }
+
+}
+

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/carrinho.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/contato.css">
+    <link rel="stylesheet" href="respon/rescontato.css">
     <title>Contato-pizza</title>
 </head>
 
@@ -17,7 +18,7 @@
         <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
         <div class="icones-topo">
             <div class="login">
-                <img src="favi icons/user 1.svg" alt="ícone de usuário">
+                <img id="login-icon" src="favi icons/user 1.svg" alt="ícone de usuário">
             </div>
             <div class="carrinho">
                 <img src="favi icons/carrinho.svg" alt="carrinho de compras">
@@ -30,6 +31,23 @@
             <p>Fidelidade</p>
             <p id="ativo">Contato</p>
         </nav>
+
+        <!-- Ícone de Menu Mobile -->
+        <div class="menu-mobile-icon">
+            <img id="openMenu" src="favi icons/menu.svg" alt="menu" />
+            <img id="closeMenu" src="carrinho/x.svg" alt="fechar" style="display:none;" />
+        </div>
+
+        <!-- Menu lateral mobile -->
+        <div class="menu-lateral" id="menuLateral">
+            <ul>
+                <li>Sobre <span>></span></li>
+                <li>Cardápio <span>></span></li>
+                <li class="destaque">Promoções <span>></span></li>
+                <li>Fidelidade <span>></span></li>
+                <li>Contato <span>></span></li>
+            </ul>
+        </div>
     </header>
 
 
@@ -40,9 +58,11 @@
             <p>Realizar uma reserva é uma ótima maneira de planejar a <br>sua vinda à nossa casa. Para garantir a melhor
                 <br>acomodação de todos os clientes e amigos, e poder <br>proporcionar a melhor experiência.
             </p>
-            <img src="favi icons/check.svg" alt="check">
-            <img src="favi icons/check.svg" alt="check">
-            <img src="favi icons/check.svg" alt="check">
+            <div class="icons">
+                <img src="favi icons/check.svg" alt="check">
+                <img src="favi icons/check.svg" alt="check">
+                <img src="favi icons/check.svg" alt="check">
+            </div>
             <div class="texto-cartao">
                 <p>Beneficios exclusivos</p>
                 <p>Agende o horario que quiser</p>

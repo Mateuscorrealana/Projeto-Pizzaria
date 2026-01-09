@@ -1,0 +1,117 @@
+/* responsivade de todas as paginas */
+
+/* pagina inicial */
+
+/* ==============================
+   HERO MOBILE — FIEL AO FIGMA
+============================== */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: clip;
+  }
+
+  .conteudo-principal {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    margin: 95px auto 40px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* imagem de fundo */
+  .card {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* card vermelho */
+  .texto {
+    position: relative;
+    z-index: 2;
+    background-color: #FF5858;
+    width: 71%;
+    max-width: 360px;
+    margin-top: 140px;
+    left: 55px;
+    padding: 26px 22px;
+    border-radius: 22px;
+    text-align: left;
+    transform: translateY(-40px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  }
+
+  .texto h1 {
+    position: relative;
+    font-size: 66px;
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 14px;
+    right: 20px;
+    top: 20px;
+    color: var(--cor3);
+  }
+
+  .texto h1 span{
+    position: relative;
+    right: 6px;
+  }
+
+  .texto .valem {
+    position: relative;
+    right: 12px;
+  }
+
+  .texto p {
+    position: relative;
+    font-size: 34px;
+    line-height: 1.5;
+    top: 70px;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  /* botão largo */
+  .reservar {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    padding: 14px 0;
+    font-size: 16px;
+    border-radius: 24px;
+  }
+}
+
+/* ==============================
+   AJUSTES FINOS (TELAS MENORES)
+============================== */
+@media (max-width: 430px) {
+
+  .texto {
+    margin-top: 120px;
+    padding: 22px 18px;
+  }
+
+  .texto h1 {
+    font-size: 23px;
+  }
+
+  .texto p {
+    font-size: 13px;
+  }
+}
+
+

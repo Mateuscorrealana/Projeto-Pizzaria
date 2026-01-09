@@ -30,3 +30,11 @@ cpfInput.addEventListener('input', () => {
 
     cpfInput.value = value;
 });
+
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("dragstart", (e) => e.preventDefault());
+});
+
+document.addEventListener("dragstart", (e) => {
+    e.preventDefault();
+});

@@ -60,6 +60,7 @@ label {
     background: #ffffffa9;
     padding: 12px;
     border-radius: 12px;
+    border: 2px solid #fbad40;
     margin: 8px 0 22px;
 }
 
@@ -168,4 +169,11 @@ label {
 .decor-bottom {
     bottom: -40px;
     left: -70px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #ffcdca inset !important; /* cor sólida equivalente */
+    -webkit-text-fill-color: #000 !important;
 }

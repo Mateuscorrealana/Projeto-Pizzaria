@@ -96,3 +96,29 @@
     }, 500);
 
 })();
+
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+const menuLateral = document.getElementById("menuLateral");
+
+function fecharMenu() {
+  menuLateral.classList.remove("ativo");
+  openMenu.style.display = "block";
+  closeMenu.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+openMenu.addEventListener("click", () => {
+  menuLateral.classList.add("ativo");
+  openMenu.style.display = "none";
+  closeMenu.style.display = "block";
+  document.body.style.overflow = "hidden";
+});
+
+closeMenu.addEventListener("click", fecharMenu);
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    fecharMenu();
+  }
+});

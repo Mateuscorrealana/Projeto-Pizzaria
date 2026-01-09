@@ -1,0 +1,59 @@
+/* MENU LATERAL / DROPDOWN MOBILE */
+@media (max-width: 768px) {
+
+    .menu-lateral {
+        position: fixed;
+        top: 80px;
+        /* logo abaixo do header */
+        left: 50%;
+        transform: translate(-50%, -40px);
+        opacity: 0;
+        width: 85%;
+        max-width: 320px;
+        background: #FF4C4C;
+        z-index: 999;
+        padding: 20px 22px;
+        border-radius: 22px;
+        transition:
+            transform 0.5s ease,
+            opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    /* lista */
+    .menu-lateral ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* itens */
+    .menu-lateral li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    /* último item sem linha */
+    .menu-lateral li:last-child {
+        border-bottom: none;
+    }
+
+    /* menu ativo */
+    .menu-lateral.ativo {
+        transform: translate(-50%, 0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+    .menu-lateral li span {
+        font-size: 20px;
+        opacity: 0.85;
+    }
+}
