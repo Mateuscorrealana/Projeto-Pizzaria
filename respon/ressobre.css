@@ -1,0 +1,11 @@
+/* Esconde os elementos mobile por padrão (Desktop/PC) */
+.menu-mobile-icon, 
+.menu-lateral {
+    display: none;
+}
+
+/* Garante que o menu lateral só apareça quando for ativado via JS, 
+   se você estiver usando classes como 'active' */
+.menu-lateral.active {
+    display: block; 
+}
