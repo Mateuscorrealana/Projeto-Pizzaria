@@ -1,11 +1,14 @@
 /* Esconde mobile no PC */
 .menu-mobile-icon,
 .menu-lateral {
-    display: none;
+    display: block;
 }
 
 @media (max-width: 768px) {
-
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
     body {
         background-color: #000;
         margin: 0;
@@ -92,7 +95,7 @@
         background-color: #120907;
         border-radius: 28px;
         width: 80%;
-        height: 80%;
+        height: 70%;
         max-width: 360px;
         margin: 0 auto;
         left: 50%;
@@ -111,7 +114,7 @@
         font-weight: 700;
         line-height: 1.2;
         margin: 0;
-        top: 2px;
+        top: -2px;
     }
 
     .cartao h1 .res {
@@ -121,31 +124,44 @@
     /* TEXTO PRINCIPAL */
     .cartao>p {
         color: #d1d1d1;
-        font-size: 9px;
+        font-size: 10px;
         line-height: 1.45;
         margin: 0;
+        margin-top: -20px;
     }
 
     /* BENEFÍCIOS */
     .icons {
+        position: relative;
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        margin-top: 10px;
+        top: -55px;
+        gap: 12px;
     }
 
+    
     .icons img {
+        position: relative;
+        left: 60px;     
+        margin-top: 10px;
+        margin-bottom: -10px;
         width: 18px;
+        height: 18px;
+        object-fit: cover;
+    }
+
+    .texto-cartao {
+        position: relative;
+        margin-top: -25px;
+        
     }
 
     .texto-cartao p {
-        display: flex;
         font-size: 13px;
         line-height: 1.4;
         margin: 0;
-        margin-top: -8px;
+        margin-top: -5px;
         color: #fff;
-        top: -50px;
     }
 
     /* TEXTO CANCELAMENTO */
@@ -156,23 +172,25 @@
 
     .cartao-cancela p {
         font-size: 8px;
-        line-height: 1.55;
         color: #bdbdbd;
         top: -60px;
         right: 30px;
         line-height: 1.55;
+        word-wrap: break-word;
+        transform: scale(1.30);
+        transform-origin: left top;
     }
 
     /* BOTÃO */
     .cartao-cancela button {
         width: 100%;
-        right: 15px;
+        right: 20px;
         background-color: #F2A23A;
         color: #000;
         border-radius: 10px;
         font-size: 16px;
         font-weight: 600;
-        top: -60px;
+        top: -20px;
     }
 
     /* MASTERCARD */
@@ -183,7 +201,11 @@
     }
 
     .mastercard img {
-        display: none;
+        width: 70px;
+        height: 35px;
+        object-fit: cover;
+        margin-left: 590px;
+        margin-top: -130px;
     }
 }
 
