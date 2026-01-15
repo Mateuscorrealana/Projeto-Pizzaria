@@ -1,11 +1,201 @@
-/* Esconde os elementos mobile por padrão (Desktop/PC) */
-.menu-mobile-icon, 
+/* ==================================================
+   PADRÃO (DESKTOP) — ESCONDE MENU MOBILE
+================================================== */
+
+/* Menu hambúrguer e menu lateral NÃO aparecem no PC */
+.menu-mobile-icon,
 .menu-lateral {
     display: none;
 }
 
-/* Garante que o menu lateral só apareça quando for ativado via JS, 
-   se você estiver usando classes como 'active' */
-.menu-lateral.active {
-    display: block; 
+/* ==================================================
+   RESPONSIVO — MOBILE
+================================================== */
+@media (max-width: 950px) {
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    /* Esconde menu horizontal do desktop */
+    nav.cabecalho {
+        display: none !important;
+    }
+
+    /* Header ajustado para mobile */
+    header {
+        padding: 20px !important;
+        justify-content: space-between !important;
+    }
+
+    /* Logo menor (igual Figma) */
+    .logo {
+        width: 120px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Ícones do topo */
+    .icones-topo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-right: 0 !important;
+    }
+
+    .login,
+    .carrinho {
+        display: flex !important;
+        top: 3px !important;
+    }
+
+    .icones-topo img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* =========================
+       MENU MOBILE
+    ========================= */
+
+    /* Mostra ícone do menu (hambúrguer) */
+    .menu-mobile-icon {
+        display: block !important;
+    }
+
+    #openMenu,
+    #closeMenu {
+        width: 32px !important;
+        cursor: pointer !important;
+        filter: brightness(0) invert(1);
+    }
+
+    /* Menu lateral (visível só no mobile, JS controla abertura) */
+    .menu-lateral {
+        display: block;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 980px;
+    }
+
+    .caixa-imagem {
+        display: flex;
+        width: 90% !important;
+        height: 100%;
+    }
+
+    .caixa-imagem img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .conteudo h1 {
+        position: relative;
+        font-size: 26px;
+        top: 20px;
+        transform: scale(1.03);
+    }
+
+    .tradição {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .tradição .bloco {
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+    }
+
+    .bloco p {
+        font-size: 13px;
+        text-align: justify;
+        transform: scale(1.10);
+    }
+
+    .principal-3 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .conteudo-esquerda {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .conteudo-esquerda h2 {
+        position: relative;
+        font-size: 10px;
+        transform: scale(2.20);
+        top: 70px;
+        right: 50px;
+    }
+
+    .conteudo-esquerda p {
+        position: relative;
+        font-size: 5px;
+        transform: scale(2.50);
+        top: 90px;
+        right: 45px;
+    }
+
+    .conteudo-esquerda img {
+        display: flex;
+        position: relative;
+        width: 100vw;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-right: 50px;
+        margin-top: 30px;
+    }
+
+    .conteudo-direita h1 {
+        position: relative;
+        top: -190px;
+        left: 110px;
+    }
+
+    .conteudo-direita h2 {
+        position: relative;
+        font-size: 15px;
+        transform: scale(1.50);
+        top: -590px;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+    .conteudo-direita p {
+        font-size: 10px;
+        transform: scale(1.65);
+        margin-top: 80px;
+    }
+
+    .conteudo-direita img {
+        position: relative;
+        width: 200px;
+        top: 120px;
+    }
+
+    .principal-4 .col-esquerda p {
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    .tc-textos p {
+        text-align: justify;
+    }
 }
