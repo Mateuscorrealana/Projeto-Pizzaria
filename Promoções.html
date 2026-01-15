@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style/carrinho.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/promoções.css">
+    <link rel="stylesheet" href="style/lateral.css">
+    <link rel="stylesheet" href="respon/respromo.css">
     <title>Promoções</title>
 </head>
 
@@ -31,19 +33,36 @@
             <p>Fidelidade</p>
             <p>Contato</p>
         </nav>
+
+         <!-- Ícone de Menu Mobile -->
+        <div class="menu-mobile-icon">
+            <img id="openMenu" src="favi icons/menu.svg" alt="menu" />
+            <img id="closeMenu" src="carrinho/x.svg" alt="fechar" style="display:none;" />
+        </div>
+
+        <!-- Menu lateral mobile -->
+        <div class="menu-lateral" id="menuLateral">
+            <ul>
+                <li>Sobre <span>></span></li>
+                <li>Cardápio <span>></span></li>
+                <li class="destaque">Promoções <span>></span></li>
+                <li>Fidelidade <span>></span></li>
+                <li>Contato <span>></span></li>
+            </ul>
+        </div>
     </header>
 
     <main>
         <div class="promo">
-            <img src="favi icons/bolo.svg" alt="icon-bolo">
+            <img src="favi icons/bolo.svg" alt="icon-bolo" class="esquerdo">
             <h1>Promoção de <span>Aniversário</span></h1>
-            <img src="favi icons/bolo.svg" alt="icon-bolo">
+            <img src="favi icons/bolo.svg" alt="icon-bolo" class="direito">
         </div>
 
         <section class="princi">
-            <img src="assets/imagem-promo2.jpg" alt="promoções">
+            <img src="assets/imagem-promo2.jpg" alt="promoções" class="img-promo">
             <div class="text">
-                <p>Comemore conosco no dia do seu aniversário e ganhe seu rodízio <br>totalmente de graça.</p>
+                <p class="h1">Comemore conosco no dia do seu aniversário e ganhe seu rodízio totalmente de graça.</p>
                 <p>Confira o regulamento:</p>
                 <p><img src="favi icons/seta.svg" alt="seta"> O rodízio será gratuito para o aniversariante do dia que
                     trouxer 3 <br>ou mais acompanhantes pagantes (valor integral);</p>

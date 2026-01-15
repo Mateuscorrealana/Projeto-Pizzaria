@@ -100,34 +100,61 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const openMenu = document.getElementById("openMenu");
-  const closeMenu = document.getElementById("closeMenu");
-  const menuLateral = document.getElementById("menuLateral");
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const menuLateral = document.getElementById("menuLateral");
 
-  if (!openMenu || !closeMenu || !menuLateral) {
-    return; // sai sem quebrar a página
-  }
-
-  function fecharMenu() {
-    menuLateral.classList.remove("ativo");
-    openMenu.style.display = "block";
-    closeMenu.style.display = "none";
-    document.body.style.overflow = "";
-  }
-
-  openMenu.addEventListener("click", () => {
-    menuLateral.classList.add("ativo");
-    openMenu.style.display = "none";
-    closeMenu.style.display = "block";
-    document.body.style.overflow = "hidden";
-  });
-
-  closeMenu.addEventListener("click", fecharMenu);
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      fecharMenu();
+    if (!openMenu || !closeMenu || !menuLateral) {
+        return; // sai sem quebrar a página
     }
-  });
 
+    function fecharMenu() {
+        menuLateral.classList.remove("ativo");
+        openMenu.style.display = "block";
+        closeMenu.style.display = "none";
+        document.body.style.overflow = "";
+    }
+
+    openMenu.addEventListener("click", () => {
+        menuLateral.classList.add("ativo");
+        openMenu.style.display = "none";
+        closeMenu.style.display = "block";
+        document.body.style.overflow = "hidden";
+    });
+
+    closeMenu.addEventListener("click", fecharMenu);
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            fecharMenu();
+        }
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuLateral = document.getElementById("menuLateral");
+
+    if (!menuLateral) return;
+
+    menuLateral.addEventListener("click", (ev) => {
+        const item = ev.target.closest("li, span");
+        if (!item) return;
+
+        const texto = item.textContent.trim().toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+        let destino = null;
+
+        if (texto.includes("sobre")) destino = "sobre.html";
+        else if (texto.includes("cardapio")) destino = "cardápio.html";
+        else if (texto.includes("promo")) destino = "Promoções.html";
+        else if (texto.includes("fidelidade")) destino = "fidelidade.html";
+        else if (texto.includes("contato")) destino = "contato.html";
+
+        if (destino) {
+            window.location.href = destino;
+        }
+    });
 });

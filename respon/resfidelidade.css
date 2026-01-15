@@ -1,0 +1,160 @@
+/* Menu hambúrguer e menu lateral NÃO aparecem no PC */
+.menu-mobile-icon,
+.menu-lateral {
+    display: none;
+}
+
+@media (max-width: 950px) {
+
+    nav.cabecalho {
+        display: none !important;
+    }
+
+    header {
+        padding: 20px !important;
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        width: 120px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Ícones do topo */
+    .icones-topo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-right: 0 !important;
+    }
+
+    .login, .carrinho {
+        display: flex !important;
+        top: 3px !important;
+    }
+
+    .icones-topo img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* =========================
+       MENU MOBILE
+    ========================= */
+
+    /* Mostra ícone do menu (hambúrguer) */
+    .menu-mobile-icon {
+        display: block !important;
+    }
+
+    #openMenu,
+    #closeMenu {
+        width: 32px !important;
+        cursor: pointer !important;
+    }
+
+    /* Menu lateral (visível só no mobile, JS controla abertura) */
+    .menu-lateral {
+        display: block;
+    }
+
+     /* MAIN */
+    .principal-fidelidade {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 80px 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* IMAGEM DE FUNDO */
+    .img-fidelidade {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .img-fidelidade img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* CARD */
+    .card-fidelidade {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        left: 1px;
+        margin-top: 50px;
+        background-color: #ff5a5f;
+        border-radius: 22px;
+        padding: 28px 22px;
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    /* TÍTULO */
+    .card-fidelidade h2 {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .card-fidelidade h2 span {
+        color: #fbb040;
+    }
+
+    /* TEXTO */
+    .card-fidelidade p {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .card-fidelidade p span {
+        font-weight: 600;
+    }
+
+    /* LISTA */
+    .card-fidelidade ul {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-fidelidade ul li {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 24px 1fr 28px;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    /* ÍCONE INFO */
+    .card-fidelidade .icon-info {
+        flex-shrink: 0;
+    }
+
+    /* ÍCONES DA DIREITA */
+    .card-fidelidade ul li img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+    }
+}

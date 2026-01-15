@@ -1,7 +1,7 @@
 /* Esconde mobile no PC */
 .menu-mobile-icon,
 .menu-lateral {
-    display: block;
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -65,6 +65,22 @@
     #closeMenu {
         width: 32px !important;
         cursor: pointer !important;
+    }
+
+    .menu-lateral {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        background-color: #120907;
+        z-index: 999;
+        transition: right 0.3s ease;
+    }
+
+    .menu-lateral.ativo {
+        right: 0;
     }
 
 
